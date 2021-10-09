@@ -1,0 +1,45 @@
+Presentación del curso y Fundamentos del Desarrollo Web
+
+Dev Toools:
+  -Sí nos vamos a 'Network' > 'Headers', además de la respuesta recibida, podemos ver
+    sí el servidor nos respondió con cabeceras, y las cabeceras que se usaron en la
+    petición.
+  -En caso de un status code 304, indica que el recurso no se modifico, y lo está 
+    obteniendo de la cache.
+  -Sí damos click derecho en cualquier parte de la 1er columna (donde están los
+    nombres), podemos agregar o quitar columnas. Una importante es la de prioridad,
+    que indican la proridad al cargar cada recurso.
+
+DOM:
+  -Cuando en JS usamos el elemento 'document', hacemos referencia a que usaremos 
+    algun elemento del DOM.
+  -Como ejemplo, document.querySelector(), donde traeremos algun elemento con ese
+    selector.
+  -Al traer por selector, podemos tambien indicar varios a la vez, por ejemplo, en
+    'a.ancla' trae un <a> que tenga la clase 'ancla'.
+  -Al usar querySelectorAll, no devuelve un array, sino un nodeList (despues lo
+    vemos). Y, querySelector nos devuelve un nodo.
+  -El dom no es solo de lectura. Para escribir, usamos innerHTML.
+  -Para cambiar solo el texto de un elemento, usamos 'textContent'.
+  -Con la propiedad 'clientHeight' de cada elemento, vemos cuanto mide en pixeles en
+    el cliente.
+
+Formularios:
+  -El 'action' debe ser una dirección que el servidor pueda comprender.
+  -Al enviar datos y dirigirnos a la pestaña 'Network' de los Dev Tools, nos va a 
+    mostrar una petición hecha al servidor, con toda su info. en la parte 'General',
+    y en 'Form Data' podemos ver los datos que enviamos a ese servidor.
+  -Al enviar datos, podremos ver en Network un archivo con el nombre de nuestra página, Y
+    que tenga un código 302. Esto es porque nos está redirigiendo a ese sitio para mostrarnos
+    el dato que está enviando.
+
+SPA:
+  -El JavaScript asincrono (AJAX) es el que nos permitirá más adelante hacer SPA.
+  -Una SPA básicamente lo que hace es enviar los datos al servidor, y al enviarlos,
+    renderizarlos sin recargar la página.
+  -Lo que queremos es que el usuario no vuelva a descargar recursos que ya había descargado.
+
+Status code importantes:
+  -301: Cuando cambia completamente de una URL a la otra.
+  -302: Encontró el recurso, y además hizo una redirección.
+  -4xx y 5xx: Todos son errores.
