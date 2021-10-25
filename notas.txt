@@ -1,45 +1,84 @@
-Presentación del curso y Fundamentos del Desarrollo Web
+Aprendiendo Javascript y React desde cero
 
-Dev Toools:
-  -Sí nos vamos a 'Network' > 'Headers', además de la respuesta recibida, podemos ver
-    sí el servidor nos respondió con cabeceras, y las cabeceras que se usaron en la
-    petición.
-  -En caso de un status code 304, indica que el recurso no se modifico, y lo está 
-    obteniendo de la cache.
-  -Sí damos click derecho en cualquier parte de la 1er columna (donde están los
-    nombres), podemos agregar o quitar columnas. Una importante es la de prioridad,
-    que indican la proridad al cargar cada recurso.
+-JS es multiparadigma: En los leguajes normalmente se programa de una forma (funcional, 
+  POO, ...). En JS se puede programar de varias formas.
 
-DOM:
-  -Cuando en JS usamos el elemento 'document', hacemos referencia a que usaremos 
-    algun elemento del DOM.
-  -Como ejemplo, document.querySelector(), donde traeremos algun elemento con ese
-    selector.
-  -Al traer por selector, podemos tambien indicar varios a la vez, por ejemplo, en
-    'a.ancla' trae un <a> que tenga la clase 'ancla'.
-  -Al usar querySelectorAll, no devuelve un array, sino un nodeList (despues lo
-    vemos). Y, querySelector nos devuelve un nodo.
-  -El dom no es solo de lectura. Para escribir, usamos innerHTML.
-  -Para cambiar solo el texto de un elemento, usamos 'textContent'.
-  -Con la propiedad 'clientHeight' de cada elemento, vemos cuanto mide en pixeles en
-    el cliente.
+-La forma más moderna y estandard de colocar un JS en HTML es con la etiqueta script en el
+  head, pero con la propiedad 'type' con valor 'module'. La diferencia de colocar esa prop
+  es que podremos usar los EcmaScrpt modules (import). Tendríamos eso sí, que levantar un
+  servidor.
 
-Formularios:
-  -El 'action' debe ser una dirección que el servidor pueda comprender.
-  -Al enviar datos y dirigirnos a la pestaña 'Network' de los Dev Tools, nos va a 
-    mostrar una petición hecha al servidor, con toda su info. en la parte 'General',
-    y en 'Form Data' podemos ver los datos que enviamos a ese servidor.
-  -Al enviar datos, podremos ver en Network un archivo con el nombre de nuestra página, Y
-    que tenga un código 302. Esto es porque nos está redirigiendo a ese sitio para mostrarnos
-    el dato que está enviando.
+-Debilmente tipado: Se puede sobreescribir una variable de numero en un string (por ejempo)
+  y no daría error.
 
-SPA:
-  -El JavaScript asincrono (AJAX) es el que nos permitirá más adelante hacer SPA.
-  -Una SPA básicamente lo que hace es enviar los datos al servidor, y al enviarlos,
-    renderizarlos sin recargar la página.
-  -Lo que queremos es que el usuario no vuelva a descargar recursos que ya había descargado.
+-Tipado dinamico: En un lenguaje con tipado estatico, debemos definir de que tipo es la
+  variable al momento de crearla. En uno dinamico, no lo definimos.
 
-Status code importantes:
-  -301: Cuando cambia completamente de una URL a la otra.
-  -302: Encontró el recurso, y además hizo una redirección.
-  -4xx y 5xx: Todos son errores.
+Tipos:
+  -Number.
+  -String.
+  -Boolean.
+  -undefined.
+  -null.
+  -BigInt (No importante).
+  -Symbol (No importante).
+
+-Estos son de tipo primitivo. Los que no son primitivos son de tipo objeto.
+
+Primitivos:
+  -Inmutables: Como ejemplo, tendremos un string, este tiene metodos como el toLowerCase(),
+    este metodo no cambiará directamente al string original, aunque podemos crear otros 
+    strings usando este metodo. Por eso son inmutables, porque no cambian aunque tengan
+    metodos que pueden modificarlos, pero no directamente su valor.
+
+Objetos:
+  -Son mutables, pues podemos ingresarles valores.
+  -Entre ellos están los objetos, los arrays y las funciones, aunque hay más.
+  -De igual forma, vamos a querer en lo más posible, no mutar los arrays.
+  -Para ello podemos usar metodos como map, forEach, y darselos a otras variables.
+  
+array.concat():
+  -Está es una forma de agreagar datos a los arrays sin mutarlos.
+  -Devuelve un nuevo array con los valores del array del que estamos usando el metodo, junto
+    con el que se coloque como parametro.
+  -Como parametro tambien podemos colocar otro array.
+
+-Ingresando a una key que no exista dentro de un objeto, nos devuelve undefined.
+
+Parametros y argumentos en funciónes:
+  -Los parametros son los que usamos como nombres al definir la función.
+  -Los argumentos son los valores que damos como input a esos parametros.
+
+Formas de declarar una función:
+  -Function expression: Se le da como valor a una variable.
+  -Declaración: Con la palabra function.
+
+Inferencia:
+  -Cuando sumamos un 2 + "hola" hará la inferencia, que es convertir el 2 en un string, y
+    concatenar ambos valores.
+  -Sí para validar la igualdad usamos '==' usara la inferencia para validar, caso contrario
+    con '===', que no la usa.
+
+npm y npx:
+  -npm descarga el paquete.
+  -npx descarga el paquete en una carpeta temporal y lo ejecuta.
+
+Notas de React:
+  -En la carpeta public tendremos todos los archivos estaticos: imagenes,
+    html, manifest, etc.
+  -src: Todo el código.
+  -El archivo reportWebVitals lo crea create-react-app para temas de 
+    performance.
+  -En un componente de react, lo que se retorna debe ser cosas que se puedan
+    renderizar: Strings, numeros, listas convertidas a strings. No se puede
+    renderizar un objeto.
+  -Sí ponemos a renderizar "new Date()" esto nos dará error, pero no sí lo
+    convertimos a timestamp, con un "+" al inicio, así: "+new Date()".
+  -En JSX se deben siempre cerrar las etiquetas.
+  -Es valido, pero no se debe crear componentes dentro del archivo de otro,
+    genera problemas de rendimiento.
+  -El principio de los componentes es que deben ser reusables para todas las
+    páginas.
+  -En JSX, para agregar estilos en linea, usamos la prop style, y se le pasa
+    no un string, sino un objeto, así: style={{color:red}}.
+  -Importar React en cada componente ya no es necesario.
